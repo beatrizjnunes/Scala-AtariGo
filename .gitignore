@@ -1,0 +1,42 @@
+# Compiled files
+out/
+*.class
+*.tasty
+
+# sbt build files
+target/
+project/target/
+project/project/
+
+# IntelliJ IDEA files
+*.iml
+.idea/
+*.iws
+*.ipr
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Game state files (can be generated)
+src/seed.txt
+seed.txt
+JogosGuardados/*.txt
+
+# Keep directory structure but ignore content
+!JogosGuardados/.gitkeep
+
+# Temporary files
+*.log
+*.tmp
+
+# sbt cache
+.sbt/
+
+# Metals (Scala Language Server)
+.metals/
+.scala-build/
+
+# VS Code
+.vscode/
+

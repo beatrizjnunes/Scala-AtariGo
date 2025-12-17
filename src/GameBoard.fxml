@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="root" prefHeight="678.0" prefWidth="697.0" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 50%, #2c3e50, #34495e);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameBoardController">
+
+    <VBox alignment="TOP_CENTER" prefHeight="604.0" prefWidth="618.0" spacing="10" style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 15; -fx-padding: 25 35 35 35;" VBox.vgrow="ALWAYS">
+        <effect>
+            <DropShadow color="rgba(0,0,0,0.6)" offsetX="0" offsetY="5" radius="15" />
+        </effect>
+        <!-- Title -->
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" text="Atari Go - 5x5 Board">
+            <font>
+                <Font name="Arial Black" size="36" />
+            </font>
+            <effect>
+                <DropShadow color="#f39c12" radius="2" spread="0.5" />
+            </effect>
+        </Label>
+        <Separator maxWidth="200" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #f1c40f, transparent);" />
+
+        <!-- Game information -->
+        <HBox alignment="CENTER" spacing="20" style="-fx-text-fill: #e7e7ea;">
+            <Label fx:id="difficultyLabel" text="Difficulty: Easy" textFill="#e7e7ea" />
+            <Label fx:id="timeLabel" text="Max time per move: 00:00" textFill="#e7e7ea" />
+            <Label fx:id="capturesLabel" text="Captures needed: 3" textFill="#e7e7ea" />
+
+        </HBox>
+
+        <!-- StackPane to center the board -->
+        <StackPane alignment="CENTER" prefHeight="691.0" prefWidth="551.0" VBox.vgrow="ALWAYS">
+            <Pane fx:id="circlePane" maxHeight="400" maxWidth="400" prefHeight="400" prefWidth="400">
+
+                <!-- 4x4 Grid -->
+                <GridPane fx:id="grid" maxHeight="400" maxWidth="400" prefHeight="400" prefWidth="400" style="-fx-background-color: D2B48C; -fx-grid-lines-visible: true; -fx-grid-lines-color: 654321;">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25" />
+                        <ColumnConstraints percentWidth="25" />
+                        <ColumnConstraints percentWidth="25" />
+                        <ColumnConstraints percentWidth="25" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints percentHeight="25" />
+                        <RowConstraints percentHeight="25" />
+                        <RowConstraints percentHeight="25" />
+                        <RowConstraints percentHeight="25" />
+                    </rowConstraints>
+                </GridPane>
+
+                <!-- Circles at intersections (5x5) -->
+                <!-- Row 0 -->
+                <Circle centerX="0" centerY="0" fill="transparent" radius="15" stroke="transparent" strokeWidth="0.0" />
+                <Circle centerX="100" centerY="0" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="200" centerY="0" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="300" centerY="0" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="400" centerY="0" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <!-- Row 1 -->
+                <Circle centerX="0" centerY="100" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="100" centerY="100" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="200" centerY="100" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="300" centerY="100" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="400" centerY="100" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <!-- Row 2 -->
+                <Circle centerX="0" centerY="200" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="100" centerY="200" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="200" centerY="200" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="300" centerY="200" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="400" centerY="200" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <!-- Row 3 -->
+                <Circle centerX="0" centerY="300" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="100" centerY="300" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="200" centerY="300" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="300" centerY="300" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="400" centerY="300" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <!-- Row 4 -->
+                <Circle centerX="0" centerY="400" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="100" centerY="400" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="200" centerY="400" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="300" centerY="400" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+                <Circle centerX="400" centerY="400" fill="#c7ced405" radius="15" stroke="TRANSPARENT" strokeWidth="0.0" />
+            </Pane>
+
+        </StackPane>
+
+        <Label fx:id="messageLabel" alignment="CENTER" maxWidth="480" style="-fx-font-size: 14px; -fx-text-fill: #e7e7ea; -fx-font-weight: bold;" text="" textFill="#e7e7ea" wrapText="true">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Label>
+
+        <HBox alignment="CENTER" prefHeight="194.0" prefWidth="520.0" spacing="20.0">
+            <Button fx:id="undoButton" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Undo Move" textFill="#161251">
+                <font>
+                    <Font name="Arial Black" size="12.0" />
+                </font></Button>
+            <Button fx:id="menuButton" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Back to Menu" textFill="#161251">
+                <font>
+                    <Font name="Droid Serif" size="12.0" />
+                </font></Button>
+            <Button fx:id="exitButton" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Exit Game" textFill="#161251">
+                <font>
+                    <Font name="Droid Serif" size="12.0" />
+                </font>
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin></Button>
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </HBox>
+    </VBox>
+
+    <!-- Game over overlay panel -->
+    <AnchorPane fx:id="gameOverPane" prefHeight="500" prefWidth="500" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #2c3e50, #34495e);" visible="false" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 15; -fx-padding: 25 35 35 35;" AnchorPane.bottomAnchor="100" AnchorPane.leftAnchor="100" AnchorPane.rightAnchor="100" AnchorPane.topAnchor="100">
+            <Label style="-fx-font-size: 50px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" text="Atari Go">
+                <font>
+                    <Font name="Arial Black" size="70" />
+                </font>
+                <effect>
+                    <DropShadow color="#f39c12" radius="2" spread="0.5" />
+                </effect>
+            </Label>
+            <Label fx:id="winnerLabel" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-text-fill: #f39c12;" text="Atari Go">
+                <font>
+                    <Font name="Arial Black" size="20" />
+                </font>
+            </Label>
+            <Separator maxWidth="200" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #f1c40f, transparent);" />
+            <Button fx:id="playAgainButton" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Play Again" />
+            <Button fx:id="menuButtonOverlay" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Menu" />
+            <Button fx:id="exitButtonOverlay" style="-fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f39c12, #d35400);  -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-background-radius: 12; -fx-padding: 8 18 8 18;" text="Exit" />
+        </VBox>
+    </AnchorPane>
+    <padding>
+        <Insets top="30.0" />
+    </padding>
+
+
+</StackPane>
