@@ -100,7 +100,7 @@ AtariGo/
 │   ├── MenuController.scala   # Menu controller
 │   ├── GameBoard.fxml         # Board layout
 │   └── Menu.fxml              # Menu layout
-├── JogosGuardados/            # Directory for saved games
+├── SavedGames/                # Directory for saved games
 └── README.md
 ```
 

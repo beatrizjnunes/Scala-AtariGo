@@ -99,7 +99,7 @@ class MenuController {
     fileChooser.setTitle("Select game file")
     fileChooser.getExtensionFilters.add(new ExtensionFilter("Text files", "*.txt"))
     val selectedFile: File = fileChooser.showOpenDialog(null)
-    fileName = s"JogosGuardados/${selectedFile.getName()}"
+    fileName = s"SavedGames/${selectedFile.getName()}"
 
     if (selectedFile != null) {
       onPlayClicked(event)

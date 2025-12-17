@@ -249,7 +249,7 @@ object mainTUI extends App {
         println("Enter the file name (without '.txt') to load:")
         val fileName = readLine().trim
 
-        readGame("JogosGuardados/" + fileName + ".txt") match {
+        readGame("SavedGames/" + fileName + ".txt") match {
           case Some((board, coords, stone, rand, blackC, whiteC, flag, modo, dif, capLimit, tempo)) =>
             val initialState = GameState(board, coords, stone, rand, blackC, whiteC, flag)
             timeLimitMillis = tempo

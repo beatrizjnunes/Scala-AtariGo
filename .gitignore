@@ -21,10 +21,10 @@ Thumbs.db
 # Game state files (can be generated)
 src/seed.txt
 seed.txt
-JogosGuardados/*.txt
+SavedGames/*.txt
 
 # Keep directory structure but ignore content
-!JogosGuardados/.gitkeep
+!SavedGames/.gitkeep
 
 # Temporary files
 *.log

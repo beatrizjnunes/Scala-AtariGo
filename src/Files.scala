@@ -43,7 +43,7 @@ object Files {
 
     val timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
     val baseName = if (interface.contains("GUI")) "gameGUI" else "gameTUI"
-    val file = new File(s"JogosGuardados/${baseName}_$timestamp.txt")
+    val file = new File(s"SavedGames/${baseName}_$timestamp.txt")
 
     val writer = new PrintWriter(file)
     try {
