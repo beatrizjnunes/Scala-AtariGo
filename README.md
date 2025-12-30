@@ -1,4 +1,4 @@
-# AtariGo
+# AtariGo 
 
 An AtariGo game implementation in Scala with both TUI (Terminal User Interface) and GUI (Graphical User Interface) using JavaFX.
 
